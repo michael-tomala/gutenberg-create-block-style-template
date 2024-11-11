@@ -1,5 +1,5 @@
 {
-  "name": "gutenberg-create-format-type-template",
+  "name": "gutenberg-create-block-style-template",
   "version": "0.0.1",
   "description": "Template for @wordpress/create-block with registerBlockStyle function",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michael-tomala/gutenberg-create-format-type-template.git"
+    "url": "git+https://github.com/michael-tomala/gutenberg-create-block-style-template.git"
   },
   "keywords": [
     "wordpress",
@@ -19,7 +19,7 @@
   "author": "Mike Tomala",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/michael-tomala/gutenberg-create-format-type-template/issues"
+    "url": "https://github.com/michael-tomala/gutenberg-create-block-style-template/issues"
   },
-  "homepage": "https://github.com/michael-tomala/gutenberg-create-format-type-template#readme"
+  "homepage": "https://github.com/michael-tomala/gutenberg-create-block-style-template#readme"
 }
