@@ -1,0 +1,64 @@
+<?php
+/**
+ * Plugin Name:       {{title}}
+{{#pluginURI}}
+ * Plugin URI:        {{{pluginURI}}}
+{{/pluginURI}}
+{{#description}}
+ * Description:       {{description}}
+{{/description}}
+ * Requires at least: 6.1
+ * Requires PHP:      7.0
+ * Version:           {{version}}
+{{#author}}
+ * Author:            {{author}}
+{{/author}}
+{{#license}}
+ * License:           {{license}}
+{{/license}}
+{{#licenseURI}}
+ * License URI:       {{{licenseURI}}}
+{{/licenseURI}}
+ * Text Domain:       {{textdomain}}
+{{#domainPath}}
+ * Domain Path:       {{{domainPath}}}
+{{/domainPath}}
+{{#updateURI}}
+ * Update URI:        {{{updateURI}}}
+{{/updateURI}}
+ *
+ * @package {{slugPascalCase}}
+ */
+
+namespace {{slugPascalCase}};
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ *
+ */
+function {{slugSnakeCase}}_block_init() {
+	$assets = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+    wp_register_script('{{namespace}}-{{slug}}', plugin_dir_url( __FILE__ ). 'build/index.js', $assets['dependencies'], $assets['version']);
+    wp_register_style('{{namespace}}-{{slug}}', plugin_dir_url( __FILE__ ). 'build/style-index.css', null, $assets['version']);
+}
+add_action( 'init', __NAMESPACE__ . '\\{{slugSnakeCase}}_block_init' );
+
+
+/**
+ *
+ */
+function {{slugSnakeCase}}_enqueue() {
+    wp_enqueue_style( '{{namespace}}-{{slug}}' );
+}
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\{{slugSnakeCase}}_enqueue' );
+
+/**
+ *
+ */
+function {{slugSnakeCase}}_admin_enqueue() {
+	wp_enqueue_script( '{{namespace}}-{{slug}}' );
+}
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\{{slugSnakeCase}}_admin_enqueue' );
